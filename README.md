@@ -1,4 +1,4 @@
-# Banking System – C++ & Qt Desktop Application
+ # C++ Qt Banking System
 
 A desktop banking system built with modern C++ (C++17) and Qt 6, designed to model real-world banking operations using clean object-oriented architecture, strong separation of concerns, and extensible design.
 
