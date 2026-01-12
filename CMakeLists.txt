@@ -51,7 +51,7 @@ find_package(OpenSSL REQUIRED)
 # ----------------------------
 set(BOOST_ROOT "C:/Libraries/boost_1_88_0")
 set(BOOST_INCLUDEDIR "${BOOST_ROOT}")
-set(BOOST_LIBRARYDIR "${BOOST_ROOT}/stage/lib")   # must contain .lib files
+set(BOOST_LIBRARYDIR "${BOOST_ROOT}/stage/lib")  
 
 find_package(Boost 1.88 REQUIRED COMPONENTS filesystem system)
 
@@ -77,42 +77,43 @@ set(MYSQL_SERVER_DLL "${MYSQL_SERVER_LIB_DIR}/libmysql.dll")
 # Sources / UI
 # ----------------------------
 set(SOURCES
-    main.cpp
+    src/main.cpp
 
-    LoginWindow.cpp
-    managerwindow.cpp
-    BankAccount.cpp
-    BankingExceptions.cpp
-    Card.cpp
-    CardGenerator.cpp
-    CheckingAccount.cpp
-    ConnectionPool.cpp
-    CreditCard.cpp
-    Customers.cpp
-    DataManager.cpp
-    DebitCard.cpp
-    SavingAccount.cpp
-    SecurityHelper.cpp
-    Services.cpp
-    Transaction.cpp
-    seedData.cpp
-    mainwindow.cpp
+    src/LoginWindow.cpp
+    src/managerwindow.cpp
+    src/BankAccount.cpp
+    src/BankingExceptions.cpp
+    src/Card.cpp
+    src/CardGenerator.cpp
+    src/CheckingAccount.cpp
+    src/ConnectionPool.cpp
+    src/CreditCard.cpp
+    src/Customers.cpp
+    src/DataManager.cpp
+    src/DebitCard.cpp
+    src/SavingAccount.cpp
+    src/SecurityHelper.cpp
+    src/Services.cpp
+    src/Transaction.cpp
+    src/seedData.cpp
+    src/mainwindow.cpp
 )
 
 set(HEADERS
-
-    LoginWindow.hpp
-    managerwindow.h
-    seedData.hpp
-    mainwindow.h
+    include/LoginWindow.hpp
+    include/managerwindow.h
+    include/seedData.hpp
+    include/mainwindow.h
+    include/Toast.h
 )
 
 set(UIS
-
-    LoginWindow.ui
-    managerwindow.ui
-    mainwindow.ui
+    ui/LoginWindow.ui
+    ui/managerwindow.ui
+    ui/mainwindow.ui
+    ui/mainwindow_incomplete.ui
 )
+
 
 # ----------------------------
 # Create executable
@@ -122,19 +123,22 @@ qt_add_executable(BankingUI
     ${SOURCES}
     ${HEADERS}
     ${UIS}
-    Toast.h
     resources.qrc
+)
 
+
+set_target_properties(BankingUI PROPERTIES
+    AUTOUIC_SEARCH_PATHS "${CMAKE_CURRENT_SOURCE_DIR}/ui"
 )
 
 # ----------------------------
 # Include dirs
 # ----------------------------
 target_include_directories(BankingUI PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}         
+    ${CMAKE_CURRENT_SOURCE_DIR}/include 
     ${MYSQLCPPCONN_INCLUDE_DIRS}
     ${Boost_INCLUDE_DIRS}
-
 )
 
 # ----------------------------
@@ -229,3 +233,4 @@ if(WIN32)
     VERBATIM
   )
 endif()
+
