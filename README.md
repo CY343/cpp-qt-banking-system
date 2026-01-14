@@ -54,6 +54,8 @@ The application follows a layered architecture:
 
 ---
 
+### Customer onboarding is manager-controlled (customers are created by Manager role; no public self-signup)
+
 ## Build & Run Instructions (Windows)
 
 ### Prerequisites
