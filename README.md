@@ -78,6 +78,17 @@ cmake --build . --config Debug
 When running outside Qt Creator, use `windeployqt` to deploy required Qt runtime libraries.
 
 ---
+## Screenshots
+
+### Login
+![Login Screen](docs/screenshots/login.png)
+
+### Customer Dashboard
+![Customer Dashboard](docs/screenshots/customerDashboard.png)
+
+### Manager Dashboard
+![Manager Dashboard](docs/screenshots/managerDashboard.png)
+
 
 ## Author
 
