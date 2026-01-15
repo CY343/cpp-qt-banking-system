@@ -99,6 +99,7 @@ This video demonstrates:
 - Customer login and dashboard
 - Account creation (Savings / Checking)
 - Deposits & withdrawals with validation
+- Cards management with core functionalities
 - Debit card daily limits
 - Transaction history export (CSV / PDF)
 - Manager dashboard for customer administration
