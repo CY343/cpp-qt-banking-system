@@ -53,7 +53,15 @@ The application follows a layered architecture:
 - IDE: Qt Creator / Visual Studio 2022  
 
 ---
+###
 
+“Correctness & Invariants”
+
+“Design Decisions”
+
+“Future Improvements”
+
+###
 ### Customer onboarding is manager-controlled (customers are created by Manager role; no public self-signup)
 
 ## Build & Run Instructions (Windows)
